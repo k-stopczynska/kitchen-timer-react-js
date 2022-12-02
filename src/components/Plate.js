@@ -5,9 +5,7 @@ import classes from "./Plate.module.css";
 
 const Plate = (props) => {
   const [open, setIsOpen] = useState(false);
-
-  const {counter, setCounter} = useTimer();
-
+  const {counter, setCounter, toggle} = useTimer();
 
   const timerHandler = () => {
     setIsOpen(true);
@@ -23,7 +21,7 @@ const Plate = (props) => {
       >
         {counter}
       </button>
-      {open && <TimerForm open={setIsOpen} time={setCounter}/>}
+      {open && <TimerForm open={setIsOpen} time={setCounter} toggle={toggle}/>}
     </React.Fragment>
   );
 };

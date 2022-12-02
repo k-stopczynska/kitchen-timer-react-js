@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const useTimer = () => {
-
-  const [counter, setCounter] = useState('');
+  const [counter, setCounter] = useState("");
   const [isClicked, setIsClicked] = useState(false);
 
-console.log(counter)
-
-  const changeTime = () => {
-    setCounter((prevCounter) => prevCounter - 1);
-  };
+  const changeTime = useCallback(() => {
+    if (counter > 0) {
+      setCounter((prevCounter) => prevCounter - 1);
+    } else {
+      setCounter("");
+      return;
+    }
+  }, [counter]);
 
   const toggle = () => {
-    setIsClicked(!isClicked);
+    if (counter !== "" || counter <= 0) {
+      setIsClicked(true);
+    }
   };
 
   useEffect(() => {
@@ -24,10 +28,10 @@ console.log(counter)
     }
     return () => {
       clearInterval(intervalID);
-    }
-  }, [isClicked, counter]);
+    };
+  }, [isClicked, counter, changeTime]);
 
-  return {counter, setCounter};
+  return { counter, setCounter, toggle };
 };
 
 export default useTimer;

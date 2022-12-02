@@ -7,8 +7,8 @@ const TimerForm = (props) => {
     e.preventDefault();
     const userTime = e.target.children[1].value;
     closeModal();
-    console.log(userTime);
     props.time(userTime);
+    props.toggle();
   };
 
   const closeModal = () => {
