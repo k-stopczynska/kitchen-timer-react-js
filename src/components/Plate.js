@@ -1,16 +1,31 @@
 import React, { useState } from "react";
-import useTimer from '../hooks/use-timer';
-import classes from './Plate.module.css';
+import useTimer from "../hooks/use-timer";
+import TimerForm from "./TimerForm";
+import classes from "./Plate.module.css";
 
 const Plate = (props) => {
-const [isClicked, setIsClicked] = useState(false);
-const counter = useTimer(isClicked)
+  const [open, setIsOpen] = useState(false);
 
-const timerHandler = () => {
-  setIsClicked(true);
-}
+  const {counter, setCounter} = useTimer();
 
-  return <button type="button" onClick={timerHandler} className={classes.plate} id={props.id}>{counter}</button>;
+
+  const timerHandler = () => {
+    setIsOpen(true);
+  };
+
+  return (
+    <React.Fragment>
+      <button
+        type="button"
+        onClick={timerHandler}
+        className={classes.plate}
+        id={props.id}
+      >
+        {counter}
+      </button>
+      {open && <TimerForm open={setIsOpen} time={setCounter}/>}
+    </React.Fragment>
+  );
 };
 
 export default Plate;

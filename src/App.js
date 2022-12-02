@@ -1,5 +1,8 @@
+
+
 import Header from "./components/Header";
 import Plates from './components/Plates';
+import TimerForm from './components/TimerForm'
 
 import "./App.css";
 

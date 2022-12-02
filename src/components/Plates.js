@@ -4,6 +4,7 @@ import classes from "./Plates.module.css";
 
 const Plates = () => {
   return (
+    <React.Fragment>
     <section className={classes.board__main}>
       <h2 className={classes.board__heading}>tap a plate to set timer</h2>
       <div className={classes.plates__container}>
@@ -16,6 +17,7 @@ const Plates = () => {
         <Plate id="oven"/>
       </div>
     </section>
+    </React.Fragment>
   );
 };
 
