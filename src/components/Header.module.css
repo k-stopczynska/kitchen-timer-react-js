@@ -17,6 +17,7 @@
 }
 
 .logo__container img {
+    aspect-ratio: 3000/1695;
     width: 100%;
     height: 100%
 }
@@ -24,5 +25,4 @@
 .heading__main {
     color: #45A7C8;
     font-family: 'Dancing Script', cursive;
-
 }

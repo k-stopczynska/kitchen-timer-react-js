@@ -9,3 +9,8 @@
     width: 100px;
     height: 100px;
 }
+
+.plate:hover,
+.plate:focus {
+    scale: 1.1;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const useTimer = () => {
   const [counter, setCounter] = useState("");
@@ -8,7 +8,7 @@ const useTimer = () => {
     if (counter > 0) {
       setCounter((prevCounter) => prevCounter - 1);
     } else {
-      setCounter("");
+      //setCounter("");
       return;
     }
   }, [counter]);
@@ -22,7 +22,7 @@ const useTimer = () => {
   useEffect(() => {
     let intervalID = null;
     if (isClicked) {
-      intervalID = setInterval(changeTime, 1000);
+      intervalID = setInterval(changeTime, 100);
     } else if (!isClicked && counter !== 0) {
       clearInterval(intervalID);
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from './Modal';
+import Modal from "./Modal";
 import classes from "./TimerForm.module.css";
 
 const TimerForm = (props) => {
@@ -17,7 +17,7 @@ const TimerForm = (props) => {
 
   return (
     <Modal>
-      <h2>top-left-plate</h2>
+       <h2>{props.id} plate</h2>
       <form
         className={classes.form__control}
         type="submit"
@@ -32,10 +32,7 @@ const TimerForm = (props) => {
           max="14000"
           step="1"
         ></input>
-        <button
-          type="submit"
-          className={classes.button__add__timer}
-        >
+        <button type="submit" className={classes.button__add__timer}>
           Add timer
         </button>
       </form>

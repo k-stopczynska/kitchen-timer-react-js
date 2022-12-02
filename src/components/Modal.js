@@ -5,7 +5,7 @@ import classes from "./Modal.module.css";
 const Modal = (props) => {
 
   return ReactDOM.createPortal(
-    <div id="modal">
+    <div id="modal__wrapper">
       <div className={classes.overlay}></div>
       <div className={classes.modal}>{props.children}</div>
     </div>,

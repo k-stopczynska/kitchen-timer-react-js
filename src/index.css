@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background: red;
+}
+
 :root {
   --color-main: #92D4E8;
   --color-accent: #ff8400;
