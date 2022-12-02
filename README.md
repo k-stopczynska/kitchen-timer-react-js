@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/k-stopczynska/kitchen-timer-react-js
-- Live Site URL: 
+- Live Site URL: https://kitchen-timer-szam.netlify.app/
 
 ### Built with
 
