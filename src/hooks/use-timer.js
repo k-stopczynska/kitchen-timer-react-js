@@ -22,7 +22,7 @@ const useTimer = () => {
   useEffect(() => {
     let intervalID = null;
     if (isClicked) {
-      intervalID = setInterval(changeTime, 100);
+      intervalID = setInterval(changeTime, 10000);
     } else if (!isClicked && counter !== 0) {
       clearInterval(intervalID);
     }
